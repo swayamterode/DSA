@@ -1,0 +1,14 @@
+{
+  "index": "Introduction",
+  "dsa": "DSA",
+  "demo": {
+    "title": "Portfolio ↗",
+    "type": "page",
+    "href": "https://github.com/swayamterode",
+    "newWindow": true
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
