@@ -1,0 +1,67 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Swap two numbers
+
+You are given two numbers. You need to swap them without using a temporary variable.
+
+**Example:**
+
+```bash
+Input: a = 5, b = 10
+Output: a = 10, b = 5
+```
+
+```bash
+Input: a = 3, b = 8
+Output: a = 8, b = 3
+```
+
+## Approach using XOR
+
+<Steps>
+
+### `a = a ^ b`
+
+### `b = a ^ b`
+
+### `a = a ^ b`
+
+</Steps>
+
+## Mathematical Proof
+
+XOR simple rule: `a ^ a = 0` and `a ^ 0 = a` || ` b ^ b = 0` and `b ^ 0 = b`
+
+Let's say `a = 5` and `b = 10`.
+
+1. `a = a ^ b`
+2. `b = a ^ b` ➡️ b = `(a ^ b)` ^ b => a ^ (b ^ b) = a ^ 0 = a
+3. `a = a ^ b` ➡️ a = `(a ^ b)` ^ b => (a ^ b) ^ b = a ^ (b ^ b) = a ^ 0 = a
+
+## Implementation
+
+```cpp showLineNumbers filename="./bit-manipulation/swap_two_numbers.cpp"
+void swap(int &a, int &b) {
+    a = a ^ b; // a = 5 ^ 10 = 15
+    b = a ^ b; // b = 15 ^ 10 = 5
+    a = a ^ b; // a = 15 ^ 5 = 10
+}
+
+int main() {
+    int a = 5, b = 10;
+    swap(a, b);
+    cout << "a = " << a << ", b = " << b << endl;
+    return 0;
+}
+```
+
+Output:
+
+```bash
+a = 10, b = 5
+```
+
+## Complexity Analysis
+
+- **Time Complexity:** O(1)
+- **Space Complexity:** O(1)

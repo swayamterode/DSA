@@ -1,0 +1,130 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Check if the ith bit is set or not
+
+Given a number `N` and a bit number `K`, check if the `Kth` bit of N is `set` or `not`. A bit is called set if it is `1`.
+
+<Callout type="info">
+  Note: Indexing starts with 0 from LSB (least significant bit) side in the
+  binary representation of the number.
+</Callout>
+
+**Examples:**
+
+```bash
+Input: n = 5, k = 1
+Output: NOT SET
+Explanation: 5 is represented as 101 in binary and bit at position 1 is not set
+
+Input: n = 2, k = 3
+Output: NOT SET
+Explanation: 2 is represented as 10 in binary, all higher i.e. beyond MSB, bits are NOT SET.
+```
+
+## Approach
+
+### Left Shift Operator
+
+The basic idea is to left shift the number by K bits and perform `&` with N
+
+```bash showLineNumbers filename="./bit-manipulation/isKthBitSet.cpp"
+bool isKthBitSet(int n, int k)
+{
+    if (n & (1 << k) != 0)
+        return true;
+    else
+        return false;
+}
+```
+
+### Dry Run
+
+Let's dry run the above code with the following input:
+
+```bash
+n = 13, k = 2
+
+n = 13 = 1101 (in binary)
+```
+
+<Steps>
+
+### First computing `1 << k`
+
+- `1 << 2` = `100` (in binary)
+
+### Now, performing `&` operation
+
+- `n & (1 << k)` = `1101 & 100`
+
+```
+  1101
+& 0100
+------
+  0100
+```
+
+</Steps>
+
+<Callout>
+  Whenever we get a non-zero value, it means the `kth` bit is set.
+</Callout>
+
+The value of this is `4` which is non-zero, so the `kth` bit is set.
+
+<Callout emoji="🔥">
+  Time complexity is `O(1)` | Space complexity is `O(1)`
+</Callout>
+
+## Right Shift Operator
+
+Another approach is to right shift the number by `k` bits and perform `&` with `1`
+
+```bash showLineNumbers filename="./bit-manipulation/isKthBitSet.cpp"
+bool isKthBitSet(int n, int k)
+{
+    if ((n >> k) & 1)
+        return true;
+    else
+        return false;
+}
+```
+
+### Dry Run
+
+Let's dry run the above code with the following input:
+
+```bash
+n = 9, k = 2
+
+n = 9 = 1001 (in binary)
+```
+
+<Steps>
+
+### First computing `n >> k`
+
+- `n >> 2` = `10` (in binary)
+
+### Now, performing `&` operation
+
+- `(n >> k) & 1` = `10 & 1`
+
+```
+  10
+& 01
+------
+  00
+```
+
+</Steps>
+
+<Callout>
+  Whenever we get a non-zero value, it means the `kth` bit is set.
+</Callout>
+
+The value of this is `0` which is zero, so the `kth` bit is **not set**.
+
+<Callout emoji="🔥">
+  Time complexity is `O(1)` | Space complexity is `O(1)`
+</Callout>

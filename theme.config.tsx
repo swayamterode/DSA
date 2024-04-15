@@ -120,7 +120,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: "https://github.com/swayamterode",
   useNextSeoProps: () => {
     const { route } = useRouter();
-    const titleTemplate = route === "/" ? "$wayam Blogs" : "%s -$wayam";
+    const titleTemplate = route === "/" ? "DSA ka 14" : "%s -$wayam";
     return {
       titleTemplate,
     };

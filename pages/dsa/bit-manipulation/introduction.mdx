@@ -1,0 +1,275 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Introduction to Bit Manipulation
+
+Bit manipulation is the act of algorithmically manipulating bits or binary digits.
+
+### Convert Decimal to Binary
+
+<details>
+<summary>Explanation</summary>
+
+<Steps>
+
+### Divide the number by 2
+
+### Keep track of the remainder
+
+### Repeat the process until the number is 0 or 1
+
+### Reverse the remainders
+
+</Steps>
+
+**Example:**
+
+```bash
+Decimal Number: 5 # Convert this number to binary
+Binary Number: 101 # 5 in binary
+```
+
+</details>
+
+### Convert Binary to Decimal
+
+<details>
+<summary>Explanation</summary>
+
+<Steps>
+
+### Multiply each bit by 2 raised to the power of its position
+
+### Add the results
+
+</Steps>
+
+**Example:**
+
+```bash
+
+Binary Number: 101 # Convert this number to decimal
+Decimal Number: 5 # 101 in decimal
+
+# Calculation
+1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 5
+```
+
+</details>
+
+### 1's Complement
+
+<details>
+<summary>Explanation</summary>
+
+<Steps>
+
+### Convert the Decimal Number to Binary Number
+
+### Now just flip the bits
+
+</Steps>
+
+**Example:**
+
+```bash
+Decimal Number: 5 # Convert this number to 1's complement
+Binary Number: 101 # 5 in binary
+1's Complement: 010 # Flipped the bits
+```
+
+</details>
+
+### 2's Complement
+
+<details>
+<summary>Explanation</summary>
+
+<Steps>
+
+### Convert the Decimal Number to Binary Number
+
+### Now flip the bits
+
+### Add 1 to the flipped bits
+
+</Steps>
+
+**Example:**
+
+```bash
+Decimal Number: 5 # Convert this number to 2's complement
+Binary Number: 101 # 5 in binary
+1's Complement: 010 # Flipped the bits
+2's Complement: 011 # Added 1 to the flipped bits
+```
+
+</details>
+
+### Bitwise AND Operator (&)
+
+<details>
+<summary>Explanation</summary>
+
+This is the truth table for the bitwise AND operator
+
+| A   | B   | A & B |
+| --- | --- | ----- |
+| 0   | 0   | 0     |
+| 0   | 1   | 0     |
+| 1   | 0   | 0     |
+| 1   | 1   | 1     |
+
+**Example:**
+
+```bash
+A = 5 # 101
+B = 3 # 011
+
+A & B = 1 # 001
+
+# Calculation
+101
+011
+---
+001
+```
+
+<Callout>Trick to remember: 1 & 1 = 1, else 0</Callout>
+
+</details>
+
+### Bitwise OR Operator (|)
+
+<details>
+<summary>Explanation</summary>
+
+This is the truth table for the bitwise OR operator
+
+| A   | B   | A \| B |
+| --- | --- | ------ |
+| 0   | 0   | 0      |
+| 0   | 1   | 1      |
+| 1   | 0   | 1      |
+| 1   | 1   | 1      |
+
+**Example:**
+
+```bash
+A = 5 # 101
+B = 3 # 011
+
+A | B = 7 # 111
+
+# Calculation
+101
+011
+---
+111
+```
+
+<Callout>Trick to remember: 0 | 0 = 0, else 1</Callout>
+
+</details>
+
+### Bitwise XOR Operator (^)
+
+<details>
+<summary>Explanation</summary>
+
+This is the truth table for the bitwise XOR operator
+
+| A   | B   | A ^ B |
+| --- | --- | ----- |
+| 0   | 0   | 0     |
+| 0   | 1   | 1     |
+| 1   | 0   | 1     |
+| 1   | 1   | 0     |
+
+Example:
+
+```bash
+
+A = 5 # 101
+B = 3 # 011
+
+A ^ B = 6 # 110
+
+# Calculation
+101
+011
+---
+110
+
+This is the binary representation of 6
+```
+
+<Callout>Trick to remember: `1 ^ 1 = 0`, `0 ^ 0 = 0`, else 1</Callout>
+
+</details>
+
+### Bitwise NOT Operator (~)
+
+<details>
+<summary>Explanation</summary>
+
+This is the truth table for the bitwise NOT operator
+
+| A   | ~A  |
+| --- | --- |
+| 0   | 1   |
+| 1   | 0   |
+
+Example:
+
+```bash
+A = 5 # 101
+~A = -6 # 010
+
+# Calculation
+101
+---
+010
+
+This is the binary representation of -6
+
+How? 2's complement of 6 is 010
+
+```
+
+<Callout>Trick to remember: 1 becomes 0, 0 becomes 1</Callout>
+
+</details>
+
+### Left Shift Operator (\<\<)
+
+<details>
+<summary>Explanation</summary>
+Left shift operator shifts the bits to the left by n positions
+
+Example:
+
+```bash
+A = 5 # 101
+
+A << 1 = 10 # 1010
+```
+
+</details>
+
+### Right Shift Operator (\>\>)
+
+<details>
+<summary>Explanation</summary>
+
+Right shift operator shifts the bits to the right by n positions
+
+Example:
+
+```bash
+
+A = 5 # 101
+
+A >> 1 = 2 # 10
+```
+
+</details>
