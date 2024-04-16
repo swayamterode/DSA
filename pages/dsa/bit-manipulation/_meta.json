@@ -1,10 +1,11 @@
 {
-  "introduction": "Introduction",
+  "readthis": "README",
+  "introduction": "0.Introduction",
   "swap-two-numbers": "1. Swap two numbers",
-  "set-ith-bit": "2. Set the K-th bit",
-  "ith-bit-set": "3. Check if K-th bit is set",
-  "clear-ith-bit": "4. Clear the K-th bit",
+  "set-kth-bit": "2. Set the K-th bit",
+  "Check-if-kth-bit-is-set": "3. Check if K-th bit is set",
+  "clear-kth-bit": "4. Clear the K-th bit",
   "toggle-kth-bit": "5. Toggle the K-th bit",
-  "remove-last-set-bit": "6. Remove the last set bit (rightmost)",
+  "turn-off-the-rightmost-set-bit": "6. Turn off the rightmost set bit",
   "tricks": "Tips & Tricks"
 }
