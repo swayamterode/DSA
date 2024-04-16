@@ -1,0 +1,59 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Set the ith Bit
+
+Given a number n and a value k. From the right, set the kth bit in the binary representation of n. The position of LSB(or last bit) is 0, second last bit is 1 and so on.
+
+**Examples:**
+
+```bash
+Input : n = 10, k = 2
+Output : 14
+10 = 1010
+Now, set the 2nd bit from right.
+14 = 1110
+2nd bit has been set.
+
+Input : n = 15, k = 3
+Output : 15
+3rd bit of 15 is already set.
+```
+
+## Approach
+
+The idea is to use bitwise OR operator (|) with the converted binary number by left shifting the number by k times!
+
+## Implementation
+
+```cpp filename="set_ith_bit.cpp" showLineNumbers
+int setIthBit(int &n, int k) {
+    return n = n | (i << k)
+}
+```
+
+## Dry Run
+
+Let's dry run the above implementation with the given example:
+
+```bash
+n = 10, k = 2
+```
+
+- Binary representation of 10 is `1010`
+- Left Shift the number by k times: `1 << 2` = `100`
+- Perform bitwise OR operation: `1010 | 100`
+
+```
+  1010
+| 0100
+-------
+  1110
+```
+
+- Return the result: `14`
+
+This sets the kth bit in the binary representation of n.
+
+## Complexity Analysis
+
+<Callout emoji="🔥">Time Complexity: O(1) | Space Complexity: O(1)</Callout>

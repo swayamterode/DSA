@@ -1,0 +1,53 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Clear the K-th Bit
+
+Given a number `n` and an integer `i`, clear the `K`th bit of `n`. Meaning, set the `K`th bit of `n` to `0`.
+
+**Example**
+
+```bash
+Input: n = 5, K = 2
+Output: 1
+Explanation: 5 in binary is 101.
+Clearing the 2nd bit will result in 001 which is 1 in decimal.
+```
+
+## Approach
+
+1. We know how to set the bit `k-th` position, with the help left shift and OR operator.
+2. Now we can do ~(i \<\< k) and then AND it with n to clear the `k-th` bit.
+
+<Callout emoji = "❤️‍🔥">
+So the formula to clear the `k-th` bit is: N & (~(1 \<\< K))
+</Callout>
+
+## Code
+
+```cpp copy showLineNumbers filename="clear-kth-bit.cpp"
+
+int clearKthBit(int n, int k) {
+    return n & (~(1 << k));
+}
+```
+
+## Dry Run
+
+Let's dry run the code with the given example:
+
+```bash
+n = 5, K = 2
+```
+
+1. `n` in binary is `101`.
+2. `1 << K` will be `1 << 2` which is `100`.
+3. `~(1 << K)` will be `~100` which is `011`.
+   - `~100` is `011` because `~1` is `0` and `~0` is `1` [(Not operator)](../bit-manipulation/introduction#bitwise-not-operator-).
+4. `n & (~(1 << K))` will be `101 & 011` which is `001`.
+5. `001` in decimal is `1`.
+
+So, the output is `1`.
+
+## Complexity Analysis
+
+<Callout emoji="🔥">Time Complexity: O(1) | Space Complexity: O(1)</Callout>

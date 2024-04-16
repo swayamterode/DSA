@@ -1,6 +1,10 @@
 {
   "introduction": "Introduction",
-  "ith-bit-set": "Check if the ith bit is set",
-  "swap-two-numbers": "Swap two numbers",
+  "swap-two-numbers": "1. Swap two numbers",
+  "set-ith-bit": "2. Set the K-th bit",
+  "ith-bit-set": "3. Check if K-th bit is set",
+  "clear-ith-bit": "4. Clear the K-th bit",
+  "toggle-kth-bit": "5. Toggle the K-th bit",
+  "remove-last-set-bit": "6. Remove the last set bit (rightmost)",
   "tricks": "Tips & Tricks"
 }

@@ -1,0 +1,83 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Toggle k-th bit
+
+For a given number n, if k-th bit is 0, then toggle it to 1 and if it is 1 then, toggle it to 0.
+
+**Examples :**
+
+```bash
+Input : n = 5, k = 1
+Output : 4
+5 is represented as 101 in binary
+and has its first bit 1, so toggling
+it will result in 100 i.e. 4.
+
+Input : n = 2, k = 3
+Output : 6
+
+Input : n = 75, k = 4
+Output : 67
+```
+
+## Approach
+
+1. We know how to convert number into binary.
+2. Now inorder to toggle k-th bit, we need to `left shift` the number `1` by `k bits` and then `XOR` it with `N`
+
+## Implementation
+
+```cpp
+int toggleKthBit(int N, int k) {
+    return ( N ^ (1 << K)); // XOR with 1 left shifted by k bits
+}
+```
+
+Confused? Let's dry run the above code with an example.
+
+## Dry Run
+
+**Example 1:**
+
+Given `N = 13`, `k = 2`
+
+```bash
+N = 13 = 1101
+1 << k = 1 << 2 =  100
+```
+
+Now, we will `XOR` the above two values
+
+```bash filename="dry-run.txt"
+👇
+1101
+0100
+-----
+1001
+```
+
+**Example 2:**
+
+Given `N = 13`, `k` = 1.
+
+```bash
+N = 13 = 1101
+1 << k = 1 << 1 =  10
+```
+
+<Callout emoji="❗">Here the kth is `0`, which is unset bit.</Callout>
+
+```bash filename="dry-run.txt"
+  1101
+^ 0010
+-------
+  1111
+```
+
+The output is `14`.
+
+If you are not comfortable in XOR [XOR Operator](../bit-manipulation/introduction#bitwise-xor-operator-).
+
+## Complexity Analysis
+
+<Callout emoji="🔥">Time Complexity : O(1) | Space Complexity : O(1)</Callout>
