@@ -1,0 +1,56 @@
+# Check if the number is power of two
+
+Given an Number `N`, Write a program to check if `N` is a `power of 2`.
+
+## Approach
+
+Every power of 2 will have only `one` bit set in it! So, we can use this property to solve this problem.
+
+**Example:**
+
+```bash
+N = 16
+16 = `10000` in binary
+```
+
+As we can see, there is only one set bit in the binary representation of 16. So, 16 is a power of 2.
+
+When we do `N & (N-1)` this will be depicted as follows:
+
+```bash
+16 = 10000
+15 = 01111
+
+  10000
+& 01111
+  ------
+  00000
+```
+
+So, if the result of `N & (N-1)` is 0, then the number is a **power of 2**.
+
+## Dry run
+
+Let's take an example to check if `N = 16` is a power of 2 or not.
+
+```bash
+N = 16
+16 = 10000
+15 = 01111
+
+  10000
+& 01111
+  ------
+  00000
+```
+
+## Code
+
+```cpp showLineNumbers copy
+boll powerOfTwo(int N) {
+    if(N & (N-1) == 0) {
+        return true; // return true if N is power of 2
+    }
+    return false; // else return false
+}
+```

@@ -1,0 +1,39 @@
+import { Callout, Steps, FileTree, Tabs } from "nextra/components";
+
+# Count the number of set bits
+
+Given a number `N`, Write a program to count the number of set bits in `N`.
+
+## Approach
+
+Convert the given number to binary and count the number of set bits in the binary representation.
+
+**Example:**
+
+```bash
+N = 5
+5 = `101` in binary
+```
+
+As we can see, there are `2` set bits in the binary representation of 5. So, the output will be `2`.
+
+## Code
+
+```cpp showLineNumbers copy
+int countSetBits(int N) {
+    int count = 0;
+    while(N) {
+        count += N & 1; // check if the last bit is set
+        N >>= 1; // right shift the number
+    }
+    return count;
+}
+```
+
+## Complexity Analysis
+
+<Callout>Time Complement: O(log N) | Space Complexity: O(1)</Callout>
+
+Why O(log N) time complexity?
+
+- The right shift works as a division by 2. So, the time complexity will be O(log N).

@@ -7,5 +7,7 @@
   "clear-kth-bit": "4. Clear the K-th bit",
   "toggle-kth-bit": "5. Toggle the K-th bit",
   "turn-off-the-rightmost-set-bit": "6. Turn off the rightmost set bit",
+  "power-of-2": "7. Power of 2",
+  "count-the-number-of-set-bits": "8. Count the number of set bits",
   "tricks": "Tips & Tricks"
 }
