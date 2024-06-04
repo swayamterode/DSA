@@ -1,10 +1,11 @@
 {
   "index": "Introduction",
   "dsa": "DSA",
+  "striver-a2z-sheet": "Striver's A2Z Sheet 🔥",
   "demo": {
     "title": "Portfolio ↗",
     "type": "page",
-    "href": "https://github.com/swayamterode",
+    "href": "https://terode.vercel.app/",
     "newWindow": true
   },
   "about": {
